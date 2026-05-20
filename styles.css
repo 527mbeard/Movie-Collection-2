@@ -1,0 +1,754 @@
+/* GENERAL */
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar-custom {
+    background-color: black;
+}
+
+.title {
+    color: #e7d19f;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-size: 2.2rem;
+}
+
+.title:hover {
+    color: #830102;
+    transition: 0.3s;
+}
+
+.nav-text {
+    color: #e7d19f;
+    font-size: 1.5rem;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    margin-left: 1rem;
+}
+
+.nav-text:hover {
+    color: #830102;
+}
+
+/* BUTTON */
+
+.btnside {
+    background-color: #e7d19f;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+}
+
+.btnside:hover {
+    background-color: #830102;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow: 3px 3px 0px black;
+}
+
+/* SECTION 1 */
+
+.section1 {
+    background-image: url('moviebackground.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-title {
+    color: #e7d19f;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+}
+
+.hero-subtitle {
+    color: #b18666;
+    font-size: clamp(2rem, 8vw, 5rem);
+    text-shadow: 5px 5px 5px black;
+    font-family: 'Playfair Display', serif;
+}
+
+.tickets,
+.pics {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* SECTION 2 */
+
+.section2 {
+    background-color: #830102;
+}
+
+.about-title {
+    color: #e7d19f;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+
+/* CONTENT BOX */
+
+.bigbeigebox {
+    background-color: #e7d19f;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.h3text {
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* TICKER */
+
+.ticker {
+    background-color: #e7d19f;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.8rem 0;
+}
+
+.ticker__track {
+    display: inline-flex;
+    animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker__item {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+}
+
+@keyframes ticker-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .nav-text {
+        margin-left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .hero-title {
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        text-align: center;
+    }
+
+    .bigbeigebox {
+        margin-top: 1rem;
+    }
+
+    .ticker__item {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+}
+
+/* ---------------------------
+    COLLECTION SECTION
+--------------------------- */
+
+.collection-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url("popcornred.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+
+
+/* COLLECTION TITLE */
+
+.collection-title {
+    font-size: clamp(1rem, 9vw, 6rem);
+    color: #e7d19f;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 5px;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* FILTER BAR */
+
+.filter-bar {
+    background: #e7d19f;
+    max-width: 1200px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+/* FILTER DROPDOWN */
+
+.filter-btn {
+    background: #830102;
+    color: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 12px 25px;
+
+    font-size: 1rem;
+}
+
+.custom-dropdown {
+    background: #8301017a;
+    border: none;
+}
+
+.custom-dropdown .dropdown-item {
+    color: white;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background: #830102;
+}
+
+/* SEARCH */
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+
+    background: #e7d19f;
+
+    border: 3px solid #2d2413;
+
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 1rem;
+}
+
+.search-box input {
+    flex: 1;
+
+    background: transparent;
+    border: none;
+
+    outline: none;
+
+    padding: 12px;
+
+    font-size: 1rem;
+}
+
+.search-icon {
+    font-size: 1.4rem;
+}
+
+/* GENRE BUTTONS */
+
+.genre-btn {
+    background: #830102;
+    color: white;
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 12px 28px;
+
+    font-size: 1rem;
+
+    transition: 0.3s;
+}
+
+.genre-btn:hover,
+.genre-btn.active {
+    background: black;
+}
+
+/* MOVIE GRID */
+
+#movieGrid {
+    position: relative;
+    z-index: 2;
+}
+
+/* MOVIE CARD */
+
+.movie-card {
+    width: 320px;
+
+    background: #830102;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    border: 4px dashed white;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+/* POSTER */
+
+.movie-poster {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+/* CARD INFO */
+
+.movie-info {
+    background: rgba(73, 0, 0, 0.95);
+    padding: 1rem;
+}
+
+.genre-tag {
+    display: inline-block;
+
+    background: #e7d19f;
+    color: black;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.7rem;
+
+    margin-bottom: 0.8rem;
+}
+
+.movie-title {
+    color: #e7d19f;
+
+    font-size: 1.8rem;
+
+    font-family: 'Playfair Display', serif;
+}
+
+.movie-desc {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.movie-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 1rem;
+}
+
+.rating {
+    color: gold;
+}
+
+.view-btn {
+    background: #e7d19f;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 8px 18px;
+
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .filter-bar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .search-box {
+        width: 100%;
+    }
+
+    .movie-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* --------------------
+    CARD
+    ---------------------- */
+
+.movie-card {
+
+    width: 330px;
+
+    background: #8b0000;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    border: 4px dashed white;
+
+    position: relative;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+.movie-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+/* POSTER */
+
+.poster-wrapper {
+
+    width: 100%;
+    height: 430px;
+
+    overflow: hidden;
+
+    background: #8b0000;
+}
+
+.movie-poster {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* INFO SECTION */
+
+.movie-info {
+
+    background:
+        linear-gradient(to bottom,
+            rgba(80, 0, 0, 0.95),
+            rgba(50, 0, 0, 0.98));
+
+    padding: 1rem;
+
+}
+
+/* TOP ROW */
+
+.top-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 1rem;
+}
+
+/* GENRE */
+
+.genre-tag {
+
+    background: #e7d19f;
+
+    color: #300000;
+
+    padding: 4px 12px;
+
+    border-radius: 50px;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+/* RATING */
+
+.rating {
+
+    color: gold;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+}
+
+/* TITLE */
+
+.movie-title {
+
+    color: #f0d9a4;
+
+    font-size: 2rem;
+
+    font-family: 'Playfair Display', serif;
+
+    margin-bottom: 0.7rem;
+
+    line-height: 1;
+}
+
+/* DESCRIPTION */
+
+.movie-description {
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 1.5rem;
+}
+
+/* BOTTOM ROW */
+
+.bottom-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+/* YEAR */
+
+.movie-year {
+
+    color: #e7d19f;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+/* BUTTON */
+
+.view-btn {
+
+    background: #e7d19f;
+
+    color: black;
+
+    border: none;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+
+    background: white;
+
+    transform: scale(1.05);
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .movie-card {
+
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .poster-wrapper {
+
+        height: 380px;
+    }
+
+    .movie-title {
+
+        font-size: 1.7rem;
+    }
+}
+
+/* -------------------------
+    ABOUT COLLECTION
+    ----------------------  */
+
+.about-collection-section {
+    min-height: 100vh;
+    background-color: black;
+    background-image: url("popcornred.png");
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+/* TITLE */
+
+.about-collection-title {
+    color: #e7d19f;
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* BEIGE TEXT BOX */
+
+.about-collection-box {
+    background: #dfcca0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* TEXT */
+
+.about-collection-text {
+
+    color: black;
+
+    font-size: clamp(1.2rem, 2vw, 2rem);
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+}
+
+/* FILM STRIPS */
+
+.film-strip {
+
+    position: absolute;
+
+    width: 220px;
+
+    opacity: 0.95;
+
+    z-index: 1;
+}
+
+/* TOP RIGHT */
+
+.film-strip-top {
+
+    top: 40px;
+    right: -40px;
+
+    transform: rotate(20deg);
+}
+
+/* BOTTOM LEFT */
+
+.film-strip-bottom {
+
+    bottom: -40px;
+    left: -40px;
+
+    transform: rotate(-20deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .about-collection-box {
+
+        padding: 1.5rem;
+    }
+
+    .film-strip {
+
+        width: 150px;
+    }
+
+    .film-strip-top {
+
+        top: 20px;
+        right: -30px;
+    }
+
+    .film-strip-bottom {
+
+        bottom: -20px;
+        left: -30px;
+    }
+}
+
+.modal-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: #e7d19f;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none;
+}

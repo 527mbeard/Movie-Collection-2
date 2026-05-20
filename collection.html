@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Film Lounge Collection</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/qym4woj.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom py-3">
+        <div class="container">
+            <a class="navbar-brand title" href="index.html"> 🎬 The Film Lounge </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link nav-text" href="collection.html"> Movie Collection </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-text" href="about.html"> About Us </a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="darkModeBtn" class="btn btnside ms-lg-3 mt-3 mt-lg-0">Dark Mode → </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="collection-section">
+        <div class="overlay-pattern"></div>
+        <div class="container-fluid position-relative z-2">
+            <h1 class="collection-title text-center">
+                COLLECTION
+            </h1>
+            <!-- FILTER BAR -->
+            <div class="filter-bar mx-auto">
+                <div class="dropdown">
+                    <button class="filter-btn dropdown-toggle" data-bs-toggle="dropdown"> Filter </button>
+                    <ul class="dropdown-menu custom-dropdown">
+                        <li>
+                            <a class="dropdown-item sort-option" data-sort="rating"> Rating: High to Low </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item sort-option" data-sort="alphabetical"> Alphabetical </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item sort-option" data-sort="random"> Random </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- SEARCH -->
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search movies...">
+                    <span class="search-icon"> 🔍 </span>
+                </div>
+                <!-- FILTER BUTTONS -->
+                <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+                    <button type="button" class="btn btn-light filter-btn" data-filter="All">All</button>
+                    <button type="button" class="btn btn-light filter-btn" data-filter="Action">Action</button>
+                    <button type="button" class="btn btn-light filter-btn" data-filter="Romance">Romance</button>
+                    <button type="button" class="btn btn-light filter-btn" data-filter="Kids">Kids</button>
+                    <button type="button" class="btn btn-light filter-btn" data-filter="Superhero">Superhero</button>
+                    <button type="button" class="btn btn-light filter-btn" data-filter="Dystopian">Dystopian</button>
+                </div>
+            </div>
+            <!-- MOVIE GRID -->
+            <div class="container py-5">
+                <div id="movieGrid" class="row g-5 justify-content-center">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="movieModal" class="modal-custom hidden">
+        <div class="modal-box">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <p id="modalExtra"></p>
+            <button id="closeModal" class="btn btn-light">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="collection.js"></script>
+
+</body>
+
+</html>
