@@ -27,6 +27,7 @@ const collection = [
         description:
             "A skilled CIA operative uncovers dangerous government secrets and becomes the target of a relentless international manhunt led by a ruthless assassin.",
         image: "grayman.jpg",
+        featured:true
     },
     {
         title: "Fast and Furious Presents: Hobbs and Shaw",
@@ -40,6 +41,7 @@ const collection = [
         description:
             "Former enemies Luke Hobbs and Deckard Shaw are forced to team up when a cyber-enhanced villain threatens the world with a deadly virus.",
         image: "hobbshaw.jpg",
+        featured:false
     },
     {
         title: "The Beekeeper",
@@ -53,6 +55,8 @@ const collection = [
         description:
             "After a close friend falls victim to a massive scam operation, a quiet beekeeper with a mysterious past begins a brutal quest for revenge. As he takes down powerful criminals, secrets about his former life start to surface.",
         image: "bee.jpg",
+        featured:false
+
     },
     {
         title: "Heads of State",
@@ -66,6 +70,8 @@ const collection = [
         description:
             "When world leaders become the targets of a dangerous global threat, two completely different political figures must work together to survive.",
         image: "state.jpg",
+        featured:false
+
     },
     {
         title: "Zootopia 2",
@@ -79,6 +85,7 @@ const collection = [
         description:
             "Judy Hopps and Nick Wilde return for another adventure in the busy animal city of Zootopia. As they investigate a new mystery, the pair face unexpected challenges that test their friendship and detective skills.",
         image: "zoo.jpg",
+        featured:false
     },
     {
         title: "Puss In Boots Last Wish",
@@ -92,6 +99,7 @@ const collection = [
         description:
             "After discovering he has only one life left, the fearless Puss in Boots sets out on a journey to find a magical wishing star that could restore his lost lives. Along the way, he faces dangerous enemies while learning the value of friendship and courage.",
         image: "wish.jpg",
+        featured:false
     },
     {
         title: "Cars 2",
@@ -105,6 +113,7 @@ const collection = [
         description:
             "Lightning McQueen heads overseas to compete in an international racing competition, but Mater accidentally becomes involved in a secret spy mission.",
         image: "cars2.jpg",
+        featured:true
     },
     {
         title: "Bad Guys 2",
@@ -118,6 +127,7 @@ const collection = [
         description:
             "The Bad Guys return for another hilarious adventure as the former criminals try to continue their new lives as heroes. Their latest mission quickly spirals into chaos when they encounter a fresh group of dangerous rivals.",
         image: "badguys.jpg",
+        featured:false
     },
     {
         title: "People We Meet On Vacation",
@@ -131,6 +141,7 @@ const collection = [
         description:
             "Two best friends with opposite personalities reunite for one last vacation after years of shared summer trips. As old memories resurface, they begin to realize their relationship may have always been more than friendship.",
         image: "vacation.jpg",
+        featured:false
     },
     {
         title: "Purple Hearts",
@@ -144,6 +155,7 @@ const collection = [
         description:
             "An aspiring musician and a struggling Marine agree to a fake marriage for financial benefits, but their arrangement slowly develops into a real emotional connection.",
         image: "purpleheart.jpg",
+        featured:false
     },
     {
         title: "My Oxford Year",
@@ -157,6 +169,7 @@ const collection = [
         description:
             "An ambitious American student moves to Oxford University to pursue her dream program but unexpectedly falls in love with a charming local man, changing the future she planned for herself.",
         image: "oxford.jpg",
+        featured:false
     },
     {
         title: "My Fault: London",
@@ -170,6 +183,7 @@ const collection = [
         description:
             "In a futuristic society obsessed with entertainment, a desperate man enters a deadly televised competition where contestants are hunted for the public’s enjoyment. As he fights to survive, he becomes a symbol of rebellion against the system.",
         image: "london.jpg",
+        featured:true
     },
     {
         title: "The Running Man",
@@ -183,6 +197,7 @@ const collection = [
         description:
             "After moving to London with her mother, a rebellious teenager struggles to adjust to her new wealthy lifestyle while forming a complicated connection with her stepbrother. Their relationship grows increasingly intense as family tensions rise.",
         image: "running.jpg",
+        featured:true
     },
     {
         title: "Edge of Tomorrow",
@@ -196,6 +211,7 @@ const collection = [
         description:
             "A military officer with little combat experience becomes trapped in a time loop during an alien invasion, reliving the same deadly battle repeatedly while trying to save humanity.",
         image: "tomorrow.jpg",
+        featured:false
     },
     {
         title: "The Hunger Games",
@@ -209,6 +225,7 @@ const collection = [
         description:
             "Katniss Everdeen volunteers to take her sister’s place in the Hunger Games, a brutal televised competition where teenagers fight for survival in a dystopian society.",
         image: "games.jpg",
+        featured:false
     },
     {
         title: "Alita: Battle Angel",
@@ -222,6 +239,7 @@ const collection = [
         description:
             "A cyborg with no memory of her past is rebuilt by a scientist and discovers extraordinary fighting abilities while uncovering secrets about her identity and the futuristic world around her.",
         image: "angel.png",
+        featured:false
     },
     {
         title: "Captain America: The Winter Soldier",
@@ -235,6 +253,7 @@ const collection = [
         description:
             "Steve Rogers uncovers a massive conspiracy within S.H.I.E.L.D. while facing a mysterious assassin known as the Winter Soldier, forcing him to question who he can trust.",
         image: "soilder.jpg",
+        featured:false
     },
     {
         title: "Black Panther 1",
@@ -248,6 +267,7 @@ const collection = [
         description:
             "After becoming king of Wakanda, T’Challa must defend his nation and the Black Panther mantle from a challenger connected to his family’s past.",
         image: "panther.jpg",
+        featured:false
     },
     {
         title: "Black Widow",
@@ -261,6 +281,7 @@ const collection = [
         description:
             "Natasha Romanoff reunites with figures from her past while confronting the dangerous organization that trained her to become the Black Widow.",
         image: "widow.jpg",
+        featured:false
     },
     {
         title: "Thunderbolts",
@@ -274,10 +295,11 @@ const collection = [
         description:
             "A group of antiheroes and former villains are brought together for dangerous government missions, forcing them to work as a team despite their complicated pasts.",
         image: "thunderbolts.jpeg",
+        featured:true
     },
 ];
 
-console.log(collection);
+console.log(collection[0]);
 
 const movieGrid = document.getElementById("movieGrid");
 
@@ -300,6 +322,16 @@ function render(list) {
             badgeColor = "white";
         }
 
+        let featuredBadge = "";
+
+        if (movie.featured === true) {
+            featuredBadge = `
+        <span class="featured-badge">
+            ⭐ Favorite
+        </span>
+    `;
+        }
+
         const col = document.createElement("div");
         col.className = "col-12 col-sm-6 col-lg-3 d-flex justify-content-center";
 
@@ -315,15 +347,17 @@ function render(list) {
             <div class="movie-info">
 
                 <div class="top-row">
-                    <span class="genre-tag">${movie.genre}</span>
+                    <span class="genre-tag">${movie.genre}</span> 
                     <span class="rating" style="color:${badgeColor}">
                         ⭐ ${movie.rating}
                     </span>
                 </div>
 
                 <h2 class="movie-title">${movie.title}</h2>
+               
 
                 <p class="movie-description">${movie.description}</p>
+                 ${featuredBadge}
 
                 <div class="bottom-row">
                     <span class="movie-year">${movie.year}</span>
@@ -381,7 +415,7 @@ document.querySelectorAll(".sort-option").forEach(option => {
     });
 });
 
-document.querySelectorAll(".genre-btn").forEach((btn) => {
+document.querySelectorAll(".genre-filter").forEach((btn) => {
     btn.addEventListener("click", () => {
         filterMovies(btn.dataset.filter);
     });

@@ -199,7 +199,7 @@ body {
 /* FILTER BAR */
 
 .filter-bar,
-genre-filter {
+.genre-filter {
     background: #e7d19f;
     max-width: 1200px;
     border-radius: 10px;
@@ -210,6 +210,11 @@ genre-filter {
     flex-wrap: wrap;
     position: relative;
     z-index: 3000;
+}
+
+.genre-filter:hover{
+    color:black;
+    background-color:#e7d19f;
 }
 
 /* FILTER DROPDOWN */
@@ -286,24 +291,35 @@ genre-filter {
 
 /* GENRE BUTTONS */
 
-.genre-btn {
+.genre-filter {
     background: #830102;
     color: white;
-
     border: none;
-
     border-radius: 40px;
-
     padding: 12px 28px;
-
     font-size: 1rem;
-
     transition: 0.3s;
 }
 
-.genre-btn:hover,
-.genre-btn.active {
-    background: black;
+.genre-filter:hover,
+.genre-filter.active {
+    background-color:#b18666;
+    color:white;
+}
+
+.featured-badge {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 6px 12px;
+    /* background: linear-gradient(135deg, #d4af37, #f5d67b); */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.35), inset 0 1px 1px rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 /* MOVIE GRID */
@@ -339,7 +355,8 @@ genre-filter {
 
 .movie-card {
 
-    width: 330px;
+    width: 100%;
+    max-width: 330px;
 
     background: #8b0000;
 
